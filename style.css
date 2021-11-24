@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: orbitron;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #091921;
+    place-items: center;
+    scroll-behavior: smooth;
+}
+
+.clock {
+    width: 440px;
+    height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(clock.png);
+    background-size: cover;
+    border: 4px solid #091921;
+    border-radius: 50%;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+#earth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#earth::before {
+    position: absolute;
+    content: "";
+    height: 410px;
+    width: 410px;
+    top: 6.5%;
+    left: 35.8%;
+    bottom: 94%;
+    right: 65%;
+    z-index: -1;
+    opacity: 0.3;
+    background: url(https://www.desktopbackground.org/p/2011/12/11/310685_world-map-hd-wallpaper-world-map-images-free-new-wallpapers_1920x1200_h.jpg) repeat center center/cover;
+    border-radius: 50%;
+    background-size: 700px;
+    animation: rotate 4s linear infinite;
+    transition: transform 4000ms linear;
+    transform-style: preserve-3d;
+    box-shadow: 20px 0 80px 6px rgb(83, 82, 82);
+    color: #000;
+}
+
+.selectzone {
+    border: 3px solid wheat;
+    border-radius: 10px;
+    display: block;
+    width: 400px;
+    padding-left: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    box-shadow: 20px 0 80px 6px rgb(83, 82, 82);
+}
+
+.world_time {
+    display: block;
+    color: wheat;
+    text-align: center;
+    margin-top: 10px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#ct {
+    display: block;
+    margin-top: 10px;
+    color: rgb(245, 245, 205);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 18px;
+    text-shadow: rgb(83, 82, 82);
+}
+
+#place {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: lightcoral;
+    border: 3px solid cornsilk;
+    border-radius: 10px;
+    height: 35px;
+    box-shadow: 20px 0 80px 6px rgb(83, 82, 82);
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: plum;
+    border: 3px solid cornsilk;
+    border-radius: 10px;
+    width: 80px;
+    height: 35px;
+    box-shadow: 20px 0 80px 6px rgb(83, 82, 82);
+}
+
+@keyframes rotate {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 630px 0;
+    }
+}
+
+@media only screen and (max-width: 1439px) {
+    #earth {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .selectzone {
+        position: absolute;
+        left: 5%;
+        top: 20%;
+    }
+    #ct {
+        font-size: 20px;
+    }
+}
+
+.clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 10000;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+
+.clock .hour,
+.hr {
+    width: 160px;
+    height: 160px;
+}
+
+.clock .min,
+.mn {
+    width: 190px;
+    height: 190px;
+}
+
+.clock .sec,
+.sc {
+    width: 230px;
+    height: 230px;
+}
+
+.hr,
+.mn,
+.sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff105e;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+
+.mn:before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: #fff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+.sc:before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: rgb(7, 62, 241);
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}
+
+.date_data .date {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    width: 800px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 15px 15px rgba(0, 0, 0, 0.3), inset 0 15px 15px rgba(0, 0, 0, 0.3);
+    animation: color 3s infinite;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .date_data .date {
+        font-size: 17px;
+        width: 480px;
+        height: 80px;
+    }
+}
+
+@keyframes color {
+    0% {
+        color: ivory;
+    }
+    100% {
+        color: rgb(250, 176, 188);
+    }
+}
+
+.wrapper {
+    height: 100px;
+    width: 480px;
+    cursor: default;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    border-radius: 10px;
+    animation: animate 1.5s linear infinite;
+    margin-bottom: 10px;
+}
+
+.wrapper .display,
+.wrapper span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .display {
+    background: #091921;
+    border-radius: 6px;
+    z-index: 999;
+    height: 85px;
+    width: 460px;
+    text-align: center;
+}
+
+.wrapper .display #time {
+    line-height: 85px;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: orbitron;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+    background-clip: inherit;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.wrapper span {
+    height: 100%;
+    width: 100%;
+    background: inherit;
+    border-radius: 10px;
+}
+
+.wrapper span:first-child {
+    filter: blur(10px);
+}
+
+.wrapper span:last-child {
+    filter: blur(20px);
+}

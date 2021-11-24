@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link class="clock-icon" rel="icon" type="image/png" sizes="50x50" href="clock1.png">
+</head>
+
+<body>
+
+
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+        <div id="earth"></div>
+
+    </div>
+
+    <div class="selectzone">
+        <div class="world_time">CURRENT WORLD TIME:</div>
+        <span id="ct">Timezone here</span><br>
+        <form name="f1">
+            <select name="tz" id="place" onchange="disp_tz()"></select>
+        </form>
+        <input type="button" value="Show" onclick="disp_TZ()">
+    </div>
+
+    <div class="date_data">
+        <div class="date">
+            <span id="dayname">Day</span>-
+            <span id="month"> Month</span>-
+            <span id="daynumb"> 00</span>-
+            <span id="year"> Year</span>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="display">
+            <div id="time"></div>
+        </div>
+        <span></span>
+        <span></span>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
